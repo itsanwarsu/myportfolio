@@ -154,7 +154,7 @@ faqItems.forEach(item => {
 
 });
 };
-alert("js connected!");
+
      initHamburger();
      initnav();
      initreveal();
