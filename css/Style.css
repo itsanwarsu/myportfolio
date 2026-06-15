@@ -358,10 +358,7 @@ html {
    .about {
      background: #87ceeb;
    }
-   .about p {
-     text-align: center;
-     font-weight: bold;
-   }
+   
    .box-about{
     display:flex;
     align-items:center;
