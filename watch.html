@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" 
+content="width=device-width, initial-scale=1.0">
+
+<title>Watch</title>
+
+<link rel="stylesheet" href="css/watch.css">
+<script defer src="js/watch.js"></script>
+<script defer src="db/main.js"></script>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<button onclick="goBack()">
+← Back
+</button>
+
+
+<div class="logo">
+  <img src="assets/img/icon.png" alt="logo">
+<h2>LK21</h2>
+</div>
+
+
+</header>
+
+
+
+<main>
+
+
+<section class="player-container">
+
+
+<div id="videoPlayer"></div>
+
+
+</section>
+
+
+
+
+<section class="movie-info">
+
+
+<div>
+
+
+<h1 id="title">
+Loading...
+</h1>
+
+
+<div class="meta">
+
+<span id="genre"></span>
+
+<span id="year"></span>
+
+<span>
+⭐ <b id="rating"></b>
+</span>
+
+
+</div>
+
+
+
+<p id="description"></p>
+
+
+<button id="favoriteBtn">
+
++ Watchlist
+
+</button>
+
+
+</div>
+
+
+<img 
+id="poster"
+class="poster">
+
+
+</section>
+
+
+
+
+
+<section>
+
+
+<h2>
+Recommended
+</h2>
+
+
+<div 
+id="recommendation"
+class="recommendation">
+
+</div>
+
+
+</section>
+
+
+
+</main>
+
+
+</body>
+
+</html>

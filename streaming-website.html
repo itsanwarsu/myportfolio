@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> navbar</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="css/streaming-website.css">
+        <script defer src="js/streaming-website.js"></script>
+        <script defer src="db/database.js"></script>
+          </head>
+  <body>
+    
+    <!-- NAVBAR -->
+    <nav>
+      <div class="left">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+    
+     <img src="assets/img/icon.png" alt="logo">
+     </div>
+     
+     <div class="left">
+     <input id="searchInput" 
+     type="text" 
+     autocomplete="off"
+     placeholder="Cari Judul Film Di Lk21">
+     
+     <button id="searchBtn">Search</button>
+      </div>
+      
+      <div class="desktop-menu">
+        <a href="#">🎞Genre<span>></span></a>
+        <a href="#">❤Series<span>></span></a>
+        <a href="#">⭐Populer<span>></span></a>
+        <a href="#">🌎Country<span>></span></a>
+        <a href="#">+More<span>></span></a>
+        
+        
+      </div>
+    </nav>
+    
+    <div class="mobile-menu">
+      <a style="font-size:18px;color:yellow"href="#">🏠Home</a>
+      
+      <div class="type">
+      <a href="#">🎞Genre</a>
+      <a class="red" href="#">Lainnya></a>
+      </div>
+      
+      <div class="card">
+      
+       <div class="list">
+         <a href="#">Action</a>
+         <a href="#">Adventure</a>
+         <a href="#">Animation</a>
+         <a href="#">Comedy</a>
+         <a href="#">Crime</a>
+         <a href="#">Drama</a>
+         <a href="#">Family</a>
+         <a href="#">Fantasy</a>
+       </div> 
+       
+       <div class="list">
+         <a href="#">Horor</a>
+         <a href="#">Musical</a>
+         <a href="#">Mystery</a>
+         <a href="#">Romance</a>
+         <a href="#">Sci-Fi</a>
+         <a href="#">Sport</a>
+         <a href="#">Thriller</a>
+         <a href="#">War</a>
+       </div>
+      </div>
+      
+      <div class="type">
+         <a href="#">🌎Negara</a>
+         <a class="red" href="#">Lainnya></a>
+       </div>
+       
+       <div class="card">
+         
+       <div class="list">
+         <a href="#">Amerika</a>
+         <a href="#">Australia</a>
+         <a href="#">China</a>
+         <a href="#">India</a>
+         <a href="#">Inggris</a>
+       </div>
+       
+       <div class="list">
+         <a href="#">Jepang</a>
+         <a href="#">Korea</a>
+         <a href="#">Malaysia</a>
+         <a href="#">Russia</a>
+         <a href="#">Thailand</a>
+       </div>
+       
+       </div>
+       
+       <div class="type">
+         <a href="#">📅Tahun</a>
+         <a class="red" href="#">Lainnya></a>
+       </div>
+       
+       <div class="card">
+         
+         <div class="list">
+           <a href="#">2026</a>
+           <a href="#">2025</a>
+           <a href="#">2024</a>
+           <a href="#">2023</a>
+           <a href="#">2022</a>
+         </div>
+         
+         <div class="list">
+         <a href="#">2021</a>
+         <a href="#">2020</a>
+         <a href="#">2019</a>
+         <a href="#">2018</a>
+         <a href="#">2017</a>
+         </div>
+       </div>
+       
+       <div class="type">
+         <a href="#">🔍Jelajahi</a>
+       </div>
+       
+       <div class="card">
+         
+         <div class="list">
+           <a href="#">Terpopuler</a>
+           <a href="#">Komen Terbanyak</a>
+           <a href="#">Rating Tertinggi</a>
+           <a href="#">Urut Tahun</a>
+         </div>
+         
+         <div class="list">
+           <a href="#">Rekomendasi</a>
+           <a href="#">Post Terbaru</a>
+           <a href="#">Cara Install VPN</a>
+           <a href="#">Privacy Policy</a>
+         </div>
+       </div>
+    </div>
+    
+    <main>
+      
+    <!-- Top Watch -->
+    <div id="searchResult"></div>
+    <section class="container">
+      
+      <div class="slider-wrapper">
+      <div class="top-watch-slider">
+        
+        <div onclick="watchMovie(7)" class="top-watch-card">
+          <img src="assets/poster/batmanbegins.jpg">
+          <p>Action, Crime</p>
+          <h2>Batman Begins</h2>
+        </div>
+        
+         <div onclick="watchMovie(6)" class="top-watch-card">
+          <img src="assets/poster/TheDarkKnight.jpg">
+          <p>Action, Crime</p>
+          <h2>The Dark Knight</h2>
+        </div>
+        
+        <div onclick="watchMovie(5)" class="top-watch-card">
+          <img src="assets/poster/TheDarkKnightRises.jpg">
+          <p>Drama, Crime</p>
+          <h2>The Dark Knight Rises</h2>
+        </div>
+        
+        <div onclick="watchMovie(8)" class="top-watch-card">
+          <img src="assets/poster/twilightnewmoon.jpg">
+          <p>Drama, Crime</p>
+          <h2>Twilight New Moon</h2>
+        </div>
+        
+        
+      </div>
+      </div>
+      <button class="top-watch-btn">Lihat Semua Film Unggulan</button>
+    </section>
+    
+    <!-- Film Terbaru -->
+    <section class="container">
+      <div class="tag">
+      <h2>Film Terbaru</h2>
+      <a href="#">Semua</a>
+      </div>
+            
+   <div class="slider-wrapper">
+     <div class="top-watch-slider">
+        
+        <div onclick="watchMovie(1)" class="top-watch-card">
+          <img src="assets/poster/interstellar.jpg">
+          <p>Drama, Crime</p>
+          <h2>Interstellar</h2>
+        </div>
+        
+         <div onclick="watchMovie(2)" class="top-watch-card">
+          <img src="assets/poster/thebatman.jpg">
+          <p>Action, Crime</p>
+          <h2>The Batman</h2>
+        </div>
+        
+        <div onclick="watchMovie(3)" class="top-watch-card">
+          <img src="assets/poster/avatar.jpg">
+          <p>Fantasy</p>
+          <h2>Avatar</h2>
+        </div>
+        
+        <div onclick="watchMovie(4)" class="top-watch-card">
+          <img src="assets/poster/twilight.jpg">
+          <p>Drama</p>
+          <h2>Twilight</h2>
+        </div>
+        
+        <div onclick="watchMovie(5)" class="top-watch-card">
+          <img src="assets/poster/TheDarkKnightRises.jpg">
+          <p>Drama, Crime</p>
+          <h2>The Dark Knight Rises</h2>
+        </div>
+        
+      </div>
+      </div>
+    </section>
+    
+    <!-- Top Bulan Ini -->
+     <section class="container">
+      <div class="tag">
+      <h2>Top Bulan Ini</h2>
+      <a href="#">Semua</a>
+      </div>
+      
+      <div class="slider-wrapper">
+     <div class="top-watch-slider">
+        
+        <div onclick="watchMovie(8)" class="top-watch-card">
+          <img src="assets/poster/twilightnewmoon.jpg">
+          <p>Drama, Crime</p>
+          <h2>Twilight New Moon</h2>
+        </div>
+        
+         <div onclick="watchMovie(6)" class="top-watch-card">
+          <img src="assets/poster/TheDarkKnight.jpg">
+          <p>Drama, Crime</p>
+          <h2>The Dark Knight</h2>
+        </div>
+        
+        <div onclick="watchMovie(7)" class="top-watch-card">
+          <img src="assets/poster/batmanbegins.jpg">
+          <p>Drama, Crime</p>
+          <h2>Batman Begins</h2>
+        </div>
+        
+        <div onclick="watchMovie(10)" class="top-watch-card">
+          <img src="assets/poster/thelastairbender.jpg">
+          <p>Adventure, Crime</p>
+          <h2>The Last Air Bender</h2>
+        </div>
+        
+        <div onclick="watchMovie(5)" class="top-watch-card">
+          <img src="assets/poster/TheDarkKnightRises.jpg">
+          <p>Drama, Crime</p>
+          <h2>The Dark Knight Rises</h2>
+        </div>
+        
+      </div>
+      </div>
+    </section>
+    
+    <!-- Action Terbaru -->
+        <section class="container">
+      <div class="tag">
+      <h2>Action Terbaru</h2>
+      <a href="#">Semua</a>
+      </div>
+      
+      <div class="slider-wrapper">
+       <div class="top-watch-slider">
+        
+        <div onclick="watchMovie(5)" class="top-watch-card">
+          <img src="assets/poster/TheDarkKnightRises.jpg">
+          <p>Drama, Crime</p>
+          <h2>The Dark Knight Rises</h2>
+        </div>
+        
+         <div onclick="watchMovie(6)" class="top-watch-card">
+          <img src="assets/poster/TheDarkKnight.jpg">
+          <p>Drama, Crime</p>
+          <h2>The Dark Knight </h2>
+        </div>
+        
+        <div onclick="watchMovie(7)" class="top-watch-card">
+          <img src="assets/poster/batmanbegins.jpg">
+          <p>Drama, Crime</p>
+          <h2>Batman Begins</h2>
+        </div>
+        
+        <div onclick="watchMovie(2)" class="top-watch-card">
+          <img src="assets/poster/thebatman.jpg">
+          <p>Drama, Crime</p>
+          <h2>The Batman</h2>
+        </div>
+        
+        <div onclick="watchMovie(9)" class="top-watch-card">
+          <img src="assets/poster/twilighteclipse.jpg">
+          <p>Drama, Crime</p>
+          <h2>Twilight Eclipse</h2>
+        </div>
+        
+      </div>
+      </div>
+    </section>
+    </main>
+    </body>
+    </html>
