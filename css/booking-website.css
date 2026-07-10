@@ -613,7 +613,7 @@ html {
     border-color:#0d6efd;
 }
 
-button{
+.checkBtn {
     height:55px;
     border:none;
     background:#0d6efd;
@@ -624,7 +624,7 @@ button{
     transition:.3s;
 }
 
-button:hover{
+.checkBtn:hover{
     background:#084298;
 }
 
