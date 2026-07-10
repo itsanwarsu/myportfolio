@@ -149,6 +149,47 @@ faqItems.forEach(item => {
   });
   }
 
+emailjs.init({
+    publicKey:"GX1K6g92Cnqbkvl4z"
+});
+
+const submitBtn = document.getElementById("submit");
+const form = document.getElementById('contactForm');
+
+submitBtn.addEventListener("click",(e) => {
+  e.preventDefault(); //mencegah form reload
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const project = document.getElementById("project").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Cek apakah ada input yang kosong
+    if (!name || !email || !project || !message) {
+        alert("Harap isi semua kolom sebelum mengirim!");
+        return; // hentikan proses, tidak lanjut ke emailjs.send()
+    }
+
+    emailjs.send(
+        "service_anwarsu",
+        "template_emkm88w",
+        {
+            name: name,
+            email: email,
+            project: project,
+            message: message
+        }
+    )
+    .then(()=>{
+        alert("Message sent successfully!");
+        form.reset();
+    })
+    .catch((error)=>{
+        alert("Failed to send message");
+        console.log(error);
+    });
+
+});
+
   initHamburger();
   initnav();
   initfaq();
