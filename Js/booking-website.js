@@ -131,6 +131,40 @@ setInterval(() => {
 }, 3000);
 };
 
+const form = document.getElementById("bookingForm");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const checkin = document.getElementById("checkin").value;
+    const checkout = document.getElementById("checkout").value;
+    const guests = document.getElementById("guests").value;
+    const room = document.getElementById("room").value;
+
+    if(checkin === "" || checkout === ""){
+        alert("Please select check-in and check-out dates.");
+        return;
+    }
+
+    if(new Date(checkout) <= new Date(checkin)){
+        alert("Check-out date must be after check-in date.");
+        return;
+    }
+
+    alert(`
+Booking Summary
+
+Check In : ${checkin}
+Check Out : ${checkout}
+Guests : ${guests}
+Room : ${room}
+
+Room is available!
+`);
+
+});
+
 function initfaq() {
 const faqItems =
 document.querySelectorAll(".faq-item");
