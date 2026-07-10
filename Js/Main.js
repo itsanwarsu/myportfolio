@@ -132,11 +132,17 @@ function initContactForm() {
   emailjs.init({
         publicKey: "GX1K6g92Cnqbkvl4z"
   });
+  
 const form = document.getElementById('contactForm');
-
+const sendBtn = document.getElementById('sendBtn');
+  
 form.addEventListener('submit', async function(event) {
     event.preventDefault(); // Mencegah reload halaman
-
+  
+    // 1. Ubah teks tombol dan matikan (disable) tombol agar tidak bisa diklik dua kali
+    sendBtn.innerText = "Sending Message...";
+    sendBtn.disabled = true;
+  
     try {
         // Menunggu proses pengiriman email selesai
         const response = await emailjs.sendForm('service_anwarsu', 'template_emkm88w', this);
@@ -160,6 +166,11 @@ form.addEventListener('submit', async function(event) {
             text: 'An error occurred, failed to send message'
         });
     }
+ finally {
+        // 2. KODE UTAMA: Kembalikan teks tombol seperti semula, apapun hasilnya (sukses/gagal)
+        sendBtn.innerText = "SEND MESSAGE";
+        sendBtn.disabled = false;
+    }  
 });
 }
 // ============================================
