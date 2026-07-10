@@ -594,7 +594,7 @@ textarea {
 resize:none;
 }
 
-#submit {
+#sendBtn {
   background: orange;
   color:white;
 height:62px;
@@ -605,7 +605,7 @@ cursor:pointer;
 transition:.4s;
 }
 
-#submit:hover {
+#sendBtn:hover {
 background: darkorange;
 transform:translateY(-3px);
 }
