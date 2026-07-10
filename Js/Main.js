@@ -145,8 +145,8 @@ form.addEventListener('submit', async function(event) {
         console.log('Sukses!', response.status, response.text);
         Swal.fire({
             icon: 'success',
-            title: 'Berhasil!',
-            text: 'Pesan Anda sudah terkirim.',
+            title: 'Succed!',
+            text: 'Your message has been send.',
             confirmButtonText: 'OK'
         });
         form.reset();// Mengosongkan form kembali
@@ -157,7 +157,7 @@ form.addEventListener('submit', async function(event) {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Terjadi kesalahan, gagal mengirim pesan.'
+            text: 'An error occurred, failed to send message'
         });
     }
 });
