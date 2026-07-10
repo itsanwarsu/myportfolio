@@ -534,6 +534,81 @@ html {
     font-size: 20px;
     font-weight: 600;
     }
+ .contact-form {
+display: flex;
+flex-direction: column;
+gap: 30px;
+}
+
+.quickform {
+  padding: 10px 0px;
+}
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:30px;
+margin-top: 10px;
+
+}
+.row {
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+.input-box {
+display: flex;
+flex-direction: column;
+
+}
+
+.input-box label {
+margin-bottom:10px;
+font-size:13px;
+letter-spacing:3px;
+text-transform:uppercase;
+
+}
+
+.input-box input,
+.input-box textarea {
+  background:white;
+padding:18px;
+color: black;
+font-size:15px;
+transition:.35s;
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+color:#black;
+}
+
+.input-box input:focus,
+.input-box textarea:focus{
+outline:none;
+}
+
+textarea {
+resize:none;
+}
+
+#submit {
+  background: orange;
+  color:white;
+height:62px;
+border:none;
+font-size:15px;
+letter-spacing:4px;
+cursor:pointer;
+transition:.4s;
+}
+
+#submit:hover {
+background: darkorange;
+transform:translateY(-3px);
+}
 
    .cta-grid {
     margin-top: 40px;
