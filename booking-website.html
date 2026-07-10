@@ -54,7 +54,7 @@
         <p>Discover premium rooms, best prices, and seamless booking experience.</p>
         
         <div class="buttons">
-          <a class="btn-book"href="#">Book Your Stay</a>
+          <a class="btn-book"href="#booknow">Book Your Stay</a>
           <a class="galerybtn" href="#gallery">View Photo Galery</a>
         </div>
         
@@ -259,6 +259,52 @@
   </div>
 </section>
 
+      <!-- BookForm -->
+      <section id="booknow" class="booking-section">
+  <div class="booking-container">
+    <h2>Book Your Stay</h2>
+    <p>Find the perfect room for your next vacation.</p>
+
+    <form id="bookingForm" class="booking-form">
+
+      <div class="input-box">
+        <label>Check In</label>
+        <input type="date" id="checkin" required>
+      </div>
+
+      <div class="input-box">
+        <label>Check Out</label>
+        <input type="date" id="checkout" required>
+      </div>
+
+      <div class="input-box">
+        <label>Guests</label>
+        <select id="guests">
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4 Guests</option>
+          <option>5+ Guests</option>
+        </select>
+      </div>
+
+      <div class="input-box">
+        <label>Room Type</label>
+        <select id="room">
+          <option>Standard Room</option>
+          <option>Deluxe Room</option>
+          <option>Executive Suite</option>
+          <option>Family Suite</option>
+        </select>
+      </div>
+
+      <button type="submit">
+        Check Availability
+      </button>
+
+    </form>
+  </div>
+      </section>
 <!-- Testimoni -->
 <section id="testimoni" class="testimonial">
 
