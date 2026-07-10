@@ -357,6 +357,7 @@ html {
    /* About */
    .about {
      background: #87ceeb;
+     padding: 30px 10px;
    }
     .box-about{
     display:flex;
@@ -388,6 +389,14 @@ html {
 
    .about-content p{
     margin-bottom:20px;
+    }
+
+/* Skills */
+  .skills {
+   padding: 20px 10px;   
+    }
+    .skills .card p {
+      margin-top: 10px;
     }
    /* Projects */
    .project {
