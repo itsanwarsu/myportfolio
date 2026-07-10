@@ -128,18 +128,28 @@ function initscroolanimation() {
 // ============================================
 // CONTACT FORM - EMAILJS
 // ============================================
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Mencegah halaman reload otomatis
+function initContactForm() {
+const form = document.getElementById('contactForm');
 
-    // Kirim form langsung menggunakan emailjs.sendForm
-    emailjs.sendForm('service_anwarsu', 'template_emkm88w', this)
-        .then(function() {
-            alert('Email berhasil dikirim!');
-        }, function(error) {
-            alert('Gagal mengirim email: ' + JSON.stringify(error));
-        });
+form.addEventListener('submit', async function(event) {
+    event.preventDefault(); // Mencegah reload halaman
+
+    try {
+        // Menunggu proses pengiriman email selesai
+        const response = await emailjs.sendForm('service_anwarsu', 'template_emkm88w', this);
+        
+        // Kode di bawah ini hanya berjalan jika pengiriman SUKSES
+        console.log('Sukses!', response.status, response.text);
+        alert('Email berhasil dikirim!');
+        form.reset(); // Mengosongkan form kembali
+        
+    } catch (error) {
+        // Kode di sini berjalan jika pengiriman GAGAL (Error Handling)
+        console.error('Gagal mengirim email:', error);
+        alert('Maaf, terjadi kesalahan saat mengirim email.');
+    }
 });
-
+}
 // ============================================
 // JALANKAN SEMUA INIT SAAT DOM SIAP
 // ============================================
