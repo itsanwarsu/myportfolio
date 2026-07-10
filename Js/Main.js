@@ -129,6 +129,9 @@ function initscroolanimation() {
 // CONTACT FORM - EMAILJS
 // ============================================
 function initContactForm() {
+  emailjs.init({
+        publicKey: "GX1K6g92Cnqbkvl4z"
+  });
 const form = document.getElementById('contactForm');
 
 form.addEventListener('submit', async function(event) {
@@ -140,13 +143,22 @@ form.addEventListener('submit', async function(event) {
         
         // Kode di bawah ini hanya berjalan jika pengiriman SUKSES
         console.log('Sukses!', response.status, response.text);
-        alert('Email berhasil dikirim!');
-        form.reset(); // Mengosongkan form kembali
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: 'Pesan Anda sudah terkirim.',
+            confirmButtonText: 'OK'
+        });
+        form.reset();// Mengosongkan form kembali
         
     } catch (error) {
         // Kode di sini berjalan jika pengiriman GAGAL (Error Handling)
         console.error('Gagal mengirim email:', error);
-        alert('Maaf, terjadi kesalahan saat mengirim email.');
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Terjadi kesalahan, gagal mengirim pesan.'
+        });
     }
 });
 }
