@@ -713,6 +713,9 @@ transform:translateY(-3px);
   .cta-grid {
     grid-template-columns: 1fr;
   }
+  .row {
+grid-template-columns: 1fr;
+       }
     }
 
 /* desktop */
