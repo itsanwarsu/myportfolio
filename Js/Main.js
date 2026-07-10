@@ -128,75 +128,17 @@ function initscroolanimation() {
 // ============================================
 // CONTACT FORM - EMAILJS
 // ============================================
-function initContactForm() {
-  if (typeof emailjs === "undefined") {
-    console.error("EmailJS library tidak ditemukan.");
-    return;
-  }
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah halaman reload otomatis
 
-  emailjs.init({ publicKey: "GX1K6g92Cnqbkvl4z" });
-
-  const form = document.getElementById("contactForm");
-  if (!form) {
-    console.warn("Form contact tidak ditemukan.");
-    return;
-  }
-
-  const submitBtn = form.querySelector('button[type="submit"]');
-
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    // Hindari double submit
-    if (submitBtn && submitBtn.disabled) return;
-
-    const formData = new FormData(form);
-
-    const name = formData.get("name")?.trim() || "";
-    const email = formData.get("email")?.trim() || "";
-    const project = formData.get("project")?.trim() || "";
-    const message = formData.get("message")?.trim() || "";
-
-    // Validasi kolom kosong
-    if (!name || !email || !project || !message) {
-      alert("Harap isi semua kolom.");
-      return;
-    }
-
-    // Validasi format email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert("Masukkan alamat email yang valid.");
-      return;
-    }
-
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Mengirim...";
-    }
-
-    try {
-      const response = await emailjs.send("service_anwarsu", "template_emkm88w", {
-        name,
-        email,
-        project,
-        message,
-      });
-
-      console.log("Email berhasil dikirim:", response);
-      alert("✅ Pesan berhasil dikirim!");
-      form.reset();
-    } catch (error) {
-      console.error("EmailJS Error:", error);
-      alert("❌ Gagal mengirim pesan.\nSilakan coba beberapa saat lagi.");
-    } finally {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Kirim Pesan";
-      }
-    }
-  });
-}
+    // Kirim form langsung menggunakan emailjs.sendForm
+    emailjs.sendForm('service_anwarsu', 'template_emkm88w', this)
+        .then(function() {
+            alert('Email berhasil dikirim!');
+        }, function(error) {
+            alert('Gagal mengirim email: ' + JSON.stringify(error));
+        });
+});
 
 // ============================================
 // JALANKAN SEMUA INIT SAAT DOM SIAP
