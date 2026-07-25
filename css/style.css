@@ -408,6 +408,7 @@ html {
     width: 200px;
     height: 200px;
     margin-top: 10px;
+     object-fit: cover;
     }
    .project-btn {
     display: flex;
